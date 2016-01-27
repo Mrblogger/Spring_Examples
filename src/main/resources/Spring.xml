@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ <bean id="outputHelper" class="com.arjunt.common.dependencyInjection.OutputHelper">
+	<property name="outputGenerator" ref="jsonOutputGenerator"></property>
+</bean> 
+
+<!-- Constructor Injection definition -->
+<!-- <bean id="outputHelper1" class="com.arjunt.common.dependencyInjection.OutputHelper">
+	<constructor-arg>
+		<bean class="com.arjunt.common.dependencyInjection.CsvOutputGenerator"></bean>
+	</constructor-arg>
+</bean> -->
+<!-- End of Constructor Injection -->
+
+<bean id="csvOutputGenerator" class="com.arjunt.common.dependencyInjection.CsvOutputGenerator"></bean>
+<bean id="jsonOutputGenerator" class="com.arjunt.common.dependencyInjection.JsonOutputGenerator"></bean>
+</beans>
