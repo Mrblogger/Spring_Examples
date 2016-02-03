@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="customer" class="com.arjunt.common.collections.Customer">
+		<property name="lists">
+			<list>
+				<ref bean="personBean" />
+				<bean class="com.arjunt.common.Person">
+					<property name="name" value="ArjunList" />
+					<property name="address" value="HYD" />
+					<property name="age" value="31" />
+				</bean>
+			</list>
+		</property>
+
+		<property name="sets">
+			<set>
+				<value>1</value>
+				<ref bean="personBean" />
+				<bean class="com.arjunt.common.Person">
+					<property name="name" value="ArjunSet" />
+					<property name="address" value="HYD" />
+					<property name="age" value="31" />
+				</bean>
+			</set>
+		</property>
+
+		<property name="maps">
+			<map>
+				<entry key="Key 1" value="1" />
+				<entry key="Key 2" value-ref="personBean" />
+				<entry key="Key 3">
+					<bean class="com.arjunt.common.Person">
+						<property name="name" value="ArjunSet" />
+						<property name="address" value="HYD" />
+						<property name="age" value="31" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+
+
+		<property name="props">
+			<props>
+				<prop key="admin">admin@nospam.com</prop>
+				<prop key="support">support@nospam.com</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="personBean" class="com.arjunt.common.Person">
+		<property name="name" value="ArjunTogiti" />
+		<property name="address" value="Hyderabad" />
+		<property name="age" value="31" />
+	</bean>
+</beans>

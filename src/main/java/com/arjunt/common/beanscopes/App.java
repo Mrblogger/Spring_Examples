@@ -24,7 +24,12 @@ public class App {
 		System.out.println(obj.getMessage());
 		CustomerService obj1 = (CustomerService)context.getBean("customerservice1");
 		System.out.println(obj1.getMessage());
-		
+		// including the customer bean in the context to inject a Date type.
+		Customer cust = (Customer)context.getBean("customer");
+		System.out.println(cust.getStartDate());
+		Customer cust1 = (Customer)context.getBean("custom-customer");
+		System.out.println(cust1.getStartDate());
+		System.out.println(cust1.getEndDate());
 		
 
 	}
