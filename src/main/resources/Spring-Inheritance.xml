@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+<bean id="vehicle" class="com.arjunt.common.inheritance.Vehicle">
+<property name="color" value="White"></property>
+<property name="speed" value="80"></property>
+<property name="size" value="1200"></property>
+</bean>
+<bean id="car" class="com.arjunt.common.inheritance.Car" parent="vehicle">
+<property name="cc" value="1000"></property>
+<property name="gears" value="5"></property>
+</bean>
+</beans>
